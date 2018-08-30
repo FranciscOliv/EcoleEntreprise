@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Projet Forum.iml" filepath="$PROJECT_DIR$/.idea/Projet Forum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../2eme/Projects/Labregos/v2BootStrap/labregosRed/.idea/labregosRed.iml" filepath="$PROJECT_DIR$/../../../2eme/Projects/Labregos/v2BootStrap/labregosRed/.idea/labregosRed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../2ème/Projects/Labregos/v2BootStrap/labregosRed/.idea/labregosRed.iml" filepath="$PROJECT_DIR$/../../../2ème/Projects/Labregos/v2BootStrap/labregosRed/.idea/labregosRed.iml" />
     </modules>
   </component>
 </project>
