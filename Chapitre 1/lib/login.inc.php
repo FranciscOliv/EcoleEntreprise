@@ -15,13 +15,12 @@ if (!isset($_SESSION['logged'])) {
 
     //Session vide -> créer tous les champs
     $_SESSION['logged'] = FALSE;
-    $_SESSION['users'] = array(
-        array("francisco", "oliveira", "frankyoliveira", "bjr"),
-        array("daniel", "fonseca", "danielfonseca", "bjr"),
-    );
-
+    $_SESSION['username'] = "";
+    $_SESSION['index'] = 0;
+    $_SESSION['users'] = array();
 }
 
+$error = "";
 
 if (filter_has_var(INPUT_POST, 'login')) {
     $username = filter_input(INPUT_POST, 'idLogin', FILTER_SANITIZE_STRING);
@@ -30,28 +29,41 @@ if (filter_has_var(INPUT_POST, 'login')) {
     $userOk = false;
 
     if (usernameVerify($username)) {
-        function passwordVerify($username, $pwd)
-        {
+        $_SESSION['username'] = $username;
+        if (passwordVerify($_SESSION['index'], $pwd)) {
 
+            //            $_SESSION['logged'] = TRUE;
+//            header("Location:")
+        } else {
+            $error = "Le mot de passe ne correspond pas.";
         }
 
     } else {
-
+        $error = "Votre identifiant n'existe pas. Inscrivez vous!";
     }
 }
+
 function usernameVerify($username)
 {
+    $_SESSION['index'] = -1;
     $userOk = false;
     foreach ($_SESSION['users'] as $array) {
-        if (in_array($username, $array)) {
+        $_SESSION['index']++;
+        if ($array[2] == $username) {
             $userOk = true;
+            break;
         }
     }
     return $userOk;
 
 }
 
-function passwordVerify($username, $pwd)
+function passwordVerify($index, $pwd)
 {
+    $pwdOk = false;
+    if ($_SESSION['users'][$index][3] == $pwd) {
+        $pwdOk = true;
+    }
 
+    return $pwdOk;
 }

@@ -1,5 +1,9 @@
 <?php
 require_once "lib/login.inc.php";
+if (isLogged()) {
+    header("Location:private.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,13 +27,24 @@ require_once "lib/login.inc.php";
             <legend style="text-align: center;">Connection</legend>
 
             <label for="idInput">Identifiant:</label><br>
-            <input id="idInput" type="text" name="idLogin"><br>
+            <input id="idInput" type="text" name="idLogin"
+                <?php
+                if ($_SESSION['username'] != "") {
+                    echo 'value="' . $_SESSION['username'] . '"';
+                } ?>><br>
             <label for="pwdInput">Mot de passe:</label><br>
-            <input id="pwdInput" type="text" name="pwdLogin"><br>
+            <input id="pwdInput" type="password" name="pwdLogin"><br>
             <input id="submitInput" type="submit" name="login" value="Valider"><br>
-        </fieldset>
+            <?php
+            if ($error != "") {
+                echo "<p>" . $error . "</p>";
+            }
 
+            ?>
+        </fieldset>
     </form>
+    <a href="register.php">Pas encore inscrit?</a>
+    <a href="logout.php">logout</a>
 </main>
 </body>
 </html>
