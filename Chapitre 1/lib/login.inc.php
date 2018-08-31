@@ -20,26 +20,33 @@ if (!isset($_SESSION['logged'])) {
     $_SESSION['users'] = array();
 }
 
-$error = "";
+$errors = array();
 
 if (filter_has_var(INPUT_POST, 'login')) {
     $username = filter_input(INPUT_POST, 'idLogin', FILTER_SANITIZE_STRING);
     $pwd = filter_input(INPUT_POST, 'pwdLogin', FILTER_SANITIZE_STRING);
 
+    if(empty($username)){
+        $errors['username'] = "Veuillez tapez votre username";
+    }
+    if(empty($pwd)){
+        $errors['password'] = "Veuillez tapez votre password";
+    }
     $userOk = false;
 
     if (usernameVerify($username)) {
         $_SESSION['username'] = $username;
         if (passwordVerify($_SESSION['index'], $pwd)) {
 
-            //            $_SESSION['logged'] = TRUE;
-//            header("Location:")
+            $_SESSION['logged'] = TRUE;
+            header("Location:private.php");
+            exit;
         } else {
-            $error = "Le mot de passe ne correspond pas.";
+            $errors['username'] = "Le mot de passe ne correspond pas.";
         }
 
     } else {
-        $error = "Votre identifiant n'existe pas. Inscrivez vous!";
+        $errors['password'] = "Votre identifiant n'existe pas. Inscrivez vous!";
     }
 }
 

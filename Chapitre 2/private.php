@@ -1,5 +1,5 @@
 <?php
-require_once "lib/security.inc.php";
+require_once "lib/functions.php";
 if(!isLogged()){
     header("Location:index.php");
     exit;

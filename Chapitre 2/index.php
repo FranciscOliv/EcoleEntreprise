@@ -1,5 +1,5 @@
 <?php
-require_once "lib/login.inc.php";
+require_once "lib/functions.php";
 if (isLogged()) {
     header("Location:private.php");
     exit;
@@ -35,14 +35,7 @@ if (isLogged()) {
             <label for="pwdInput">Mot de passe:</label><br>
             <input id="pwdInput" type="password" name="pwdLogin"><br>
             <input id="submitInput" type="submit" name="login" value="Valider"><br>
-            <?php
-            if(!empty($errors)){
-            foreach ($errors as $value){
-                echo "<p>" . $value . "</p>";
-            }
-            }
 
-            ?>
         </fieldset>
     </form>
     <a href="register.php">Pas encore inscrit?</a>
