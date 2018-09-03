@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d82e20e4-6b6d-4d05-8b0b-0113648dff4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapitre 1/lib/register.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/Chapitre 1/lib/register.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapitre 2/forumdb.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/Chapitre 2/forumdb.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapitre 2/forumdb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Chapitre 2/forumdb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapitre 2/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Chapitre 2/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapitre 2/lib/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Chapitre 2/lib/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapitre 2/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/Chapitre 2/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chapitre 3.pdf" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +32,7 @@
     <session id="1454482013">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.opened" value="3" />
@@ -73,8 +67,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Chapitre 2/lib/functions.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="68" column="60" lean-forward="true" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+                <state relative-caret-position="1309">
+                  <caret line="77" column="35" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
                 </state>
               </provider>
             </entry>
@@ -83,7 +77,7 @@
             <entry file="file://$PROJECT_DIR$/Chapitre 2/private.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="238">
-                  <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+                  <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
@@ -100,7 +94,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Chapitre 2/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="291">
+                <state relative-caret-position="506">
                   <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
                 </state>
               </provider>
@@ -297,24 +291,23 @@
       <workItem from="1535635345875" duration="535000" />
       <workItem from="1535636312414" duration="3921000" />
       <workItem from="1535693904304" duration="13131000" />
-      <workItem from="1535952935607" duration="5544000" />
+      <workItem from="1535952935607" duration="6363000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23956000" />
+    <option name="totallyTimeSpent" value="24775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12260128" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12260128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3991323" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -451,7 +444,7 @@
     <entry file="file://$PROJECT_DIR$/Chapitre 2/private.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -467,15 +460,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Chapitre 2/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
+        <state relative-caret-position="506">
           <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Chapitre 2/lib/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="68" column="60" lean-forward="true" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+        <state relative-caret-position="1309">
+          <caret line="77" column="35" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
         </state>
       </provider>
     </entry>
