@@ -1,7 +1,12 @@
 <?php
-/*
- * Fonction de securité utilisé dans toutes les pages privées et aussi dans les pages register et login
-*/
+/**
+ * Auteur: Fonseca de Oliveira, Francisco Daniel
+ * Classe: I.DA-P3B
+ * Année 2018-2019
+ * Projet : Forum
+ * Version : 1.0.0
+ */
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }

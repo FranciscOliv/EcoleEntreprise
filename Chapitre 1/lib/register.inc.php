@@ -1,4 +1,11 @@
 <?php
+/**
+ * Auteur: Fonseca de Oliveira, Francisco Daniel
+ * Classe: I.DA-P3B
+ * Année 2018-2019
+ * Projet : Forum
+ * Version : 1.0.0
+ */
 require_once "security.inc.php";
 
 if (session_status() == PHP_SESSION_NONE) {
