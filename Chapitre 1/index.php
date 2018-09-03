@@ -1,7 +1,7 @@
 <?php
 require_once "lib/login.inc.php";
 if (isLogged()) {
-    header("Location:private.php");
+    header("Location:main.php");
     exit;
 }
 ?>

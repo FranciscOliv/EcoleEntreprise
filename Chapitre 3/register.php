@@ -1,7 +1,7 @@
 <?php
 require_once "lib/functions.php";
 if (isLogged()) {
-    header("Location:private.php");
+    header("Location:main.php");
     exit;
 }
 ?>
@@ -47,8 +47,8 @@ if (isLogged()) {
             <label for="pwdInput">Mot de passe:</label><br>
             <input id="pwdInput" type="password" name="pwdLogin"><br>
             <label for="pwdInput">Validation du mot de passe:</label><br>
-            <input id="pwdInput" type="password" name="pwdValidateLogin"><br>
-            <input id="submitInput" type="submit" name="register" value="Valider"><br>
+            <input id="pwdInput" type="p assword" name="pwdValidateLogin"><br>
+            <input id="registerInput" type="submit" name="register" value="Valider"><br>
         </fieldset>
         <?php
         if (isset($registerErrors) OR !empty($registerErrors)) {

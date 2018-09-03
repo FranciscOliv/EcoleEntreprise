@@ -1,7 +1,7 @@
 <?php
 require_once "lib/register.inc.php";
 if (isLogged()) {
-    header("Location:private.php");
+    header("Location:main.php");
     exit;
 }
 ?>

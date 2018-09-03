@@ -45,7 +45,7 @@ if (filter_has_var(INPUT_POST, 'login')) {
         if (passwordVerify($username, $pwd)) {
 
             $_SESSION['logged'] = TRUE;
-            header("Location:private.php");
+            header("Location:main.php");
             exit;
 
         } else {

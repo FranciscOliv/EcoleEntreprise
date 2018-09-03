@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if (isLogged()) {
-    header("Location:private.php");
+    header("Location:main.php");
     exit;
 }
 

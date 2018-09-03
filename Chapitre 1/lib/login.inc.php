@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if (isLogged()) {
-    header("Location:private.php");
+    header("Location:main.php");
     exit;
 }
 
@@ -39,7 +39,7 @@ if (filter_has_var(INPUT_POST, 'login')) {
         if (passwordVerify($_SESSION['index'], $pwd)) {
 
             $_SESSION['logged'] = TRUE;
-            header("Location:private.php");
+            header("Location:main.php");
             exit;
         } else {
             $errors['username'] = "Le mot de passe ne correspond pas.";

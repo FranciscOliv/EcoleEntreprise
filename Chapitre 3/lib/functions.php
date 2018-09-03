@@ -16,11 +16,14 @@ if (!isset($_SESSION['logged'])) {
     $_SESSION['firstNameReg'] = '';
     $_SESSION['lastNameReg'] = '';
     $_SESSION['usernameReg'] = '';
+
+    $_SESSION['postOk'] = FALSE;
+
 }
 //INITIALISATION DES VARIBLES EN LOCALES
 $loginErrors = array();
 $registerErrors = array();
-$registerErrorExist = false;
+$postErrors = array();
 
 //LOGIN
 if (filter_has_var(INPUT_POST, 'login')) {
@@ -45,7 +48,7 @@ if (filter_has_var(INPUT_POST, 'login')) {
         if (passwordVerify($username, $pwd)) {
 
             $_SESSION['logged'] = TRUE;
-            header("Location:private.php");
+            header("Location:main.php");
             exit;
 
         } else {
@@ -63,6 +66,8 @@ if (filter_has_var(INPUT_POST, 'register')) {
     $_SESSION['firstNameReg'] = '';
     $_SESSION['lastNameReg'] = '';
     $_SESSION['usernameReg'] = '';
+
+    $registerErrorExist = false;
 
 
     //Entrees par l'utilisateur
@@ -109,9 +114,40 @@ if (filter_has_var(INPUT_POST, 'register')) {
             $_SESSION['registerErrors']['username'] = "Le username existe déjà";
         }
     }
+}
 
+//POST
+if (filter_has_var(INPUT_POST, 'post')) {
+
+    $_SESSION['titlePost'] = "";
+    $_SESSION['descriptionPost'] = "";
+    $_SESSION['postOk'] = FALSE;
+
+
+    $errorPostExit = false;
+
+    $userInfo = getUserByLogin($_SESSION['usernameLog']);
+
+    $title = filter_input(INPUT_POST, 'titlePost', FILTER_SANITIZE_STRING);
+    $description = filter_input(INPUT_POST, 'descriptionPost', FILTER_SANITIZE_STRING);
+
+    if (empty($title)) {
+        $postErrors['title'] = "Le titre est vide ou pas valable";
+        $errorPostExit = true;
+    }
+    if (empty($description)) {
+        $postErrors['description'] = "Le titre est vide ou pas valable";
+        $errorPostExit = true;
+    }
+
+    if (!$errorPostExit) {
+        if (insertPost($title, $description, $userInfo['idUser'])) {
+            $_SESSION['postOk'] = TRUE;
+        }
+    }
 
 }
+
 //Login functions
 function usernameVerify($usernameVerify)
 {
@@ -168,6 +204,45 @@ function addUser($firstName, $lastName, $username, $pwd)
     $userAddRequest = $db->prepare("INSERT INTO user(surname, name, login, password) VALUES (:firstname, :lastname, :username, :pwd)");
     $userAddRequest->execute(array(":firstname" => $firstName, ":lastname" => $lastName, ":username" => $username, ":pwd" => $pwd));
 }
+
+/**
+ * Renvoie les détails d'un utilisateur
+ * @param string login de l'utilisateur
+ * @return array {id; surname; name} ou false si non valide
+ */
+function getUserByLogin($username)
+{
+    $db = dbConnect();
+
+    $userInfoRequest = $db->prepare('SELECT idUser, surname, name FROM user WHERE login=? ');
+    $userInfoRequest->execute(array($username));
+    $userInfoRequestResult = $userInfoRequest->fetch();
+
+    return $userInfoRequestResult;
+
+}
+
+/**
+ * Enregistre un post en base
+ * @return boolean si tout ok ou pas
+ */
+function insertPost($title, $description, $idUser)
+{
+    $db = dbConnect();
+    $postOk = false;
+    try {
+        $postAddRequest = $db->prepare("INSERT INTO news(title, description, idUser) VALUES(:title, :description, :idUser)");
+        $postAddRequest->execute(array(":title" => $title, ":description" => $description, ":idUser" => $idUser));
+        $postOk = true;
+    } catch (Exception $e) {
+        $postOk = false;
+    }
+    if(isset($e)){
+        echo $e;
+    }
+    return $postOk;
+}
+
 
 function isLogged()
 {
