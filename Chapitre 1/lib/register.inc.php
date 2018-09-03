@@ -32,7 +32,7 @@ if (filter_has_var(INPUT_POST, 'register')) {
 
 
     if (empty($firstName)) {
-        $errors["firstName"] = "Le champ prénom est vide";
+        $errors["firstName"] = "Le champ prénom est vide ou non valable";
         $errorExist = true;
     }
     if (empty($lastName)) {

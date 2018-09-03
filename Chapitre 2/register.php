@@ -1,5 +1,5 @@
 <?php
-require_once "lib/register.inc.php";
+require_once "lib/functions.php";
 if (isLogged()) {
     header("Location:private.php");
     exit;
@@ -27,11 +27,23 @@ if (isLogged()) {
             <legend style="text-align: center;">Inscription</legend>
 
             <label for="idInput">Prénom:</label><br>
-            <input id="idInput" type="text" name="firstNameRegister"><br>
+            <input id="idInput" type="text" name="firstNameRegister"
+            <?php
+            if ($_SESSION['firstNameReg'] != "") {
+                echo 'value="' . $_SESSION['firstNameReg'] . '"';
+            } ?>><br>
             <label for="pwdInput">Nom:</label><br>
-            <input id="pwdInput" type="text" name="lastNameRegister"><br>
+            <input id="pwdInput" type="text" name="lastNameRegister"
+            <?php
+            if ($_SESSION['lastNameReg'] != "") {
+                echo 'value="' . $_SESSION['lastNameReg'] . '"';
+            } ?>><br>
             <label for="idInput">Identifiant:</label><br>
-            <input id="idInput" type="text" name="usernameRegister"><br>
+            <input id="idInput" type="text" name="usernameRegister"
+            <?php
+            if ($_SESSION['usernameReg'] != "") {
+                echo 'value="' . $_SESSION['usernameReg'] . '"';
+            } ?>><br>
             <label for="pwdInput">Mot de passe:</label><br>
             <input id="pwdInput" type="password" name="pwdLogin"><br>
             <label for="pwdInput">Validation du mot de passe:</label><br>
@@ -39,8 +51,8 @@ if (isLogged()) {
             <input id="submitInput" type="submit" name="register" value="Valider"><br>
         </fieldset>
         <?php
-        if(!empty($errors)){
-            foreach ($errors as $value){
+        if (isset($registerErrors) OR !empty($registerErrors)) {
+            foreach ($registerErrors as $value) {
                 echo "<p>" . $value . "</p>";
             }
         }

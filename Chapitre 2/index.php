@@ -29,16 +29,22 @@ if (isLogged()) {
             <label for="idInput">Identifiant:</label><br>
             <input id="idInput" type="text" name="idLogin"
                 <?php
-                if ($_SESSION['username'] != "") {
-                    echo 'value="' . $_SESSION['username'] . '"';
+                if ($_SESSION['usernameLog'] != "") {
+                    echo 'value="' . $_SESSION['usernameLog'] . '"';
                 } ?>><br>
             <label for="pwdInput">Mot de passe:</label><br>
             <input id="pwdInput" type="password" name="pwdLogin"><br>
             <input id="submitInput" type="submit" name="login" value="Valider"><br>
 
         </fieldset>
+        <?php if (isset($loginErrors) OR !empty($loginErrors)) {
+            foreach ($loginErrors as $value) {
+                echo "<p>" . $value . "</p>";
+            }
+        } ?>
     </form>
     <a href="register.php">Pas encore inscrit?</a>
+
 </main>
 </body>
 </html>
